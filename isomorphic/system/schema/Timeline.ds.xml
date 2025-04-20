@@ -1,4 +1,0 @@
-<DataSource ID="Timeline"	inheritsFrom="Calendar"	Constructor="Timeline">
-	<fields>
-	</fields>
-</DataSource>

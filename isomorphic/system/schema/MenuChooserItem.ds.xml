@@ -1,2 +1,0 @@
-<DataSource ID="MenuChooserItem" inheritsFrom="SelectItem" Constructor="MenuChooserItem">
-</DataSource>

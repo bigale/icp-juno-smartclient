@@ -1,6 +1,0 @@
-<DataSource ID="PropertyValue">
-    <fields>
-        <field name="name" type="string" />
-        <field name="value" type="any" xmlExplicitSimpleTypes="true" />
-    </fields>
-</DataSource>

@@ -1,5 +1,0 @@
-<DataSource ID="RibbonMenuButton" inheritsFrom="RibbonButton" Constructor="RibbonMenuButton">
-    <fields>
-		<field name="showMenuIcon" type="boolean" defaultValue="true" />
-    </fields>
-</DataSource>

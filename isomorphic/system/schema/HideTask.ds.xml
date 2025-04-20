@@ -1,3 +1,0 @@
-<DataSource ID="HideTask" inheritsFrom="ShowHideTask" Constructor="HideTask">
-    <field name="hide" inapplicable="true" />
-</DataSource>

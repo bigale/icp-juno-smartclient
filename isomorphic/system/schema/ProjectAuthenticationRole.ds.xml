@@ -1,6 +1,0 @@
-<DataSource ID="ProjectAuthenticationRole" inheritsFrom="Record">
-    <fields>
-        <field name="name" type="string" xmlAttribute="true" />
-        <field name="description" type="string" xmlAttribute="true" />
-    </fields>
-</DataSource>
