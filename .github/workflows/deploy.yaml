@@ -1,0 +1,54 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment Environment'
+        required: true
+        default: 'development'
+        type: choice
+        options:
+          - development
+          - production
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    env:
+      SATELLITE_ID_DEVELOPMENT: ${{ secrets.SATELLITE_ID_DEVELOPMENT }}
+      SATELLITE_ID_PRODUCTION: ${{ secrets.SATELLITE_ID_PRODUCTION }}
+      NODE_ENV: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'production' || 'development' }}
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Run tests
+        run: npm test
+        
+      - name: Build application
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SATELLITE_ID: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && secrets.SATELLITE_ID_PRODUCTION || secrets.SATELLITE_ID_DEVELOPMENT }}
+          
+      - name: Deploy to Internet Computer
+        run: |
+          if [[ "${{ github.event_name }}" == "push" && "${{ github.ref }}" == "refs/heads/main" ]]; then
+            npx juno deploy --network ic
+          else
+            npx juno deploy --network local
+          fi

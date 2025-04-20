@@ -1,0 +1,170 @@
+<svg aria-hidden="true" style="position: absolute; width: 0px; height: 0px; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<symbol id="connector_ancestor_selected" viewBox="0 0 22 32">
+  
+  <path d="m 10,0 c 0.33,0 0.66,0 1,0 0,10.556074 0,21.112148 0,31.988102 -0.33,0 -0.66,0 -1,0 C 10,21.432028 10,10.875954 10,0 Z" id="connector_path1" style="stroke-width:1.20582"></path>
+</symbol>
+
+<symbol id="connector_closed_end_rtl" viewBox="0 0 22 32">
+<path d="M0 0 C0.66 0 1.32 0 2 0 C2 1.32 2 2.64 2 4 C3.32 4 4.64 4 6 4 C6 4.66 6 5.32 6 6 C4.68 6 3.36 6 2 6 C2 7.32 2 8.64 2 10 C1.34 10 0.68 10 0 10 C0 8.68 0 7.36 0 6 C-1.32 6 -2.64 6 -4 6 C-4 5.34 -4 4.68 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="currentColor" transform="translate(11,13)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 3.96 1 7.92 1 12 C0.67 12 0.34 12 0 12 C0 8.04 0 4.08 0 0 Z " transform="translate(11,0)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(0,17)"></path>
+</symbol>
+
+<symbol id="connector_closed_end" viewBox="0 0 22 32">
+<path d="M0 0 C0.66 0 1.32 0 2 0 C2 1.32 2 2.64 2 4 C3.32 4 4.64 4 6 4 C6 4.66 6 5.32 6 6 C4.68 6 3.36 6 2 6 C2 7.32 2 8.64 2 10 C1.34 10 0.68 10 0 10 C0 8.68 0 7.36 0 6 C-1.32 6 -2.64 6 -4 6 C-4 5.34 -4 4.68 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="currentColor" transform="translate(9,13)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 3.96 1 7.92 1 12 C0.67 12 0.34 12 0 12 C0 8.04 0 4.08 0 0 Z " transform="translate(10,0)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(16,17)"></path>
+</symbol>
+
+<symbol id="connector_closed_middle" viewBox="0 0 22 32">
+<path d="M0 0 C0.66 0 1.32 0 2 0 C2 1.32 2 2.64 2 4 C3.32 4 4.64 4 6 4 C6 4.66 6 5.32 6 6 C4.68 6 3.36 6 2 6 C2 7.32 2 8.64 2 10 C1.34 10 0.68 10 0 10 C0 8.68 0 7.36 0 6 C-1.32 6 -2.64 6 -4 6 C-4 5.34 -4 4.68 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="currentColor" transform="translate(9,13)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 3.96 1 7.92 1 12 C0.67 12 0.34 12 0 12 C0 8.04 0 4.08 0 0 Z " transform="translate(10,0)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 2.64 1 5.28 1 8 C0.67 8 0.34 8 0 8 C0 5.36 0 2.72 0 0 Z " transform="translate(10,24)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(16,17)"></path>
+</symbol>
+
+<symbol id="connector_closed_middle_rtl" viewBox="0 0 22 32">
+<path d="M0 0 C0.66 0 1.32 0 2 0 C2 1.32 2 2.64 2 4 C3.32 4 4.64 4 6 4 C6 4.66 6 5.32 6 6 C4.68 6 3.36 6 2 6 C2 7.32 2 8.64 2 10 C1.34 10 0.68 10 0 10 C0 8.68 0 7.36 0 6 C-1.32 6 -2.64 6 -4 6 C-4 5.34 -4 4.68 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="currentColor" transform="translate(11,13)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 3.96 1 7.92 1 12 C0.67 12 0.34 12 0 12 C0 8.04 0 4.08 0 0 Z " transform="translate(11,0)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 2.64 1 5.28 1 8 C0.67 8 0.34 8 0 8 C0 5.36 0 2.72 0 0 Z " transform="translate(11,24)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(0,17)"></path>
+</symbol>
+
+<symbol id="connector_closed_single_rtl" viewBox="0 0 22 32">
+<path d="M0 0 C0.66 0 1.32 0 2 0 C2 1.32 2 2.64 2 4 C3.32 4 4.64 4 6 4 C6 4.66 6 5.32 6 6 C4.68 6 3.36 6 2 6 C2 7.32 2 8.64 2 10 C1.34 10 0.68 10 0 10 C0 8.68 0 7.36 0 6 C-1.32 6 -2.64 6 -4 6 C-4 5.34 -4 4.68 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="currentColor" transform="translate(11,12)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(0,17)"></path>
+</symbol>
+
+<symbol id="connector_closed_single" viewBox="0 0 22 32">
+<path d="M0 0 C0.66 0 1.32 0 2 0 C2 1.32 2 2.64 2 4 C3.32 4 4.64 4 6 4 C6 4.66 6 5.32 6 6 C4.68 6 3.36 6 2 6 C2 7.32 2 8.64 2 10 C1.34 10 0.68 10 0 10 C0 8.68 0 7.36 0 6 C-1.32 6 -2.64 6 -4 6 C-4 5.34 -4 4.68 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="currentColor" transform="translate(9,12)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(16,17)"></path>
+</symbol>
+
+<symbol id="connector_closed_middle_selected" viewBox="0 0 22 32">
+<path d="M0 0 C0.66 0 1.32 0 2 0 C2 1.32 2 2.64 2 4 C3.32 4 4.64 4 6 4 C6 4.66 6 5.32 6 6 C4.68 6 3.36 6 2 6 C2 7.32 2 8.64 2 10 C1.34 10 0.68 10 0 10 C0 8.68 0 7.36 0 6 C-1.32 6 -2.64 6 -4 6 C-4 5.34 -4 4.68 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="currentColor" transform="translate(9,13)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 3.96 1 7.92 1 12 C0.67 12 0.34 12 0 12 C0 8.04 0 4.08 0 0 Z " transform="translate(10,0)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 2.64 1 5.28 1 8 C0.67 8 0.34 8 0 8 C0 5.36 0 2.72 0 0 Z " transform="translate(10,24)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(16,17)"></path>
+</symbol>
+
+<symbol id="connector_closed_start" viewBox="0 0 22 32">
+<path d="M0 0 C0.66 0 1.32 0 2 0 C2 1.32 2 2.64 2 4 C3.32 4 4.64 4 6 4 C6 4.66 6 5.32 6 6 C4.68 6 3.36 6 2 6 C2 7.32 2 8.64 2 10 C1.34 10 0.68 10 0 10 C0 8.68 0 7.36 0 6 C-1.32 6 -2.64 6 -4 6 C-4 5.34 -4 4.68 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="currentColor" transform="translate(9,12)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 2.97 1 5.94 1 9 C0.67 9 0.34 9 0 9 C0 6.03 0 3.06 0 0 Z " transform="translate(10,23)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(16,17)"></path>
+</symbol>
+
+<symbol id="connector_middle_rtl" viewBox="0 0 22 22">
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 7.26 1 14.52 1 22 C0.67 22 0.34 22 0 22 C0 19.03 0 16.06 0 13 C-3.63 13 -7.26 13 -11 13 C-11 12.67 -11 12.34 -11 12 C-7.37 12 -3.74 12 0 12 C0 8.04 0 4.08 0 0 Z " transform="translate(11,0)"></path>
+</symbol>
+
+<symbol id="connector_end_rtl" viewBox="0 0 22 22">
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 4.29 1 8.58 1 13 C-2.96 13 -6.92 13 -11 13 C-11 12.67 -11 12.34 -11 12 C-7.37 12 -3.74 12 0 12 C0 8.04 0 4.08 0 0 Z " transform="translate(11,0)"></path>
+</symbol>
+
+<symbol id="connector_closed_start_rtl" viewBox="0 0 22 32">
+<path d="M0 0 C0.66 0 1.32 0 2 0 C2 1.32 2 2.64 2 4 C3.32 4 4.64 4 6 4 C6 4.66 6 5.32 6 6 C4.68 6 3.36 6 2 6 C2 7.32 2 8.64 2 10 C1.34 10 0.68 10 0 10 C0 8.68 0 7.36 0 6 C-1.32 6 -2.64 6 -4 6 C-4 5.34 -4 4.68 -4 4 C-2.68 4 -1.36 4 0 4 C0 2.68 0 1.36 0 0 Z " fill="currentColor" transform="translate(11,12)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 2.97 1 5.94 1 9 C0.67 9 0.34 9 0 9 C0 6.03 0 3.06 0 0 Z " transform="translate(11,23)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(0,17)"></path>
+</symbol>
+
+<symbol id="connector_end" viewBox="0 0 22 32">
+  
+  <path d="m 10,0 c 0.33,0 0.66,0 1,0 0,5.4845756 0,10.969151 0,16.619926 3.63,0 7.26,0 11,0 0,0.457048 0,0.914096 0,1.384994 -3.96,0 -7.92,0 -12,0 C 10,12.063296 10,6.1216728 10,0 Z" id="connector_path1" style="stroke-width:1.17686"></path>
+</symbol>
+
+<symbol id="connector_middle" viewBox="0 0 22 32">
+  
+  <path d="m 10,0 c 0.33,0 0.66,0 1,0 0,5.7584859 0,11.516971 0,17.449957 3.63,0 7.26,0 11,0 0,0.479874 0,0.959748 0,1.454163 -3.63,0 -7.26,0 -11,0 0,4.318865 0,8.637729 0,13.087468 -0.33,0 -0.66,0 -1,0 C 10,21.434364 10,10.87714 10,0 Z" id="connector_path1" style="stroke-width:1.20589"></path>
+</symbol>
+
+<symbol id="connector_middle_selected" viewBox="0 0 22 32">
+  
+  <path d="m 10,0 c 0.33,0 0.66,0 1,0 0,5.7584859 0,11.516971 0,17.449957 3.63,0 7.26,0 11,0 0,0.479874 0,0.959748 0,1.454163 -3.63,0 -7.26,0 -11,0 0,4.318865 0,8.637729 0,13.087468 -0.33,0 -0.66,0 -1,0 C 10,21.434364 10,10.87714 10,0 Z" id="connector_path1" style="stroke-width:1.20589"></path>
+</symbol>
+
+<symbol id="connector_opened_end_rtl" viewBox="0 0 22 32">
+<path d="M0 0 C3.3 0 6.6 0 10 0 C10 0.66 10 1.32 10 2 C6.7 2 3.4 2 0 2 C0 1.34 0 0.68 0 0 Z " fill="currentColor" transform="translate(7,17)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 5.28 1 10.56 1 16 C0.67 16 0.34 16 0 16 C0 10.72 0 5.44 0 0 Z " transform="translate(11,0)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(0,17)"></path>
+</symbol>
+
+<symbol id="connector_opened_end" viewBox="0 0 22 32">
+<path d="M0 0 C3.3 0 6.6 0 10 0 C10 0.66 10 1.32 10 2 C6.7 2 3.4 2 0 2 C0 1.34 0 0.68 0 0 Z " fill="currentColor" transform="translate(5,17)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 5.28 1 10.56 1 16 C0.67 16 0.34 16 0 16 C0 10.72 0 5.44 0 0 Z " transform="translate(10,0)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(16,17)"></path>
+</symbol>
+
+<symbol id="connector_opened_middle" viewBox="0 0 22 32">
+<path d="M0 0 C3.3 0 6.6 0 10 0 C10 0.66 10 1.32 10 2 C6.7 2 3.4 2 0 2 C0 1.34 0 0.68 0 0 Z " fill="currentColor" transform="translate(5,17)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 5.28 1 10.56 1 16 C0.67 16 0.34 16 0 16 C0 10.72 0 5.44 0 0 Z " transform="translate(10,0)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 3.96 1 7.92 1 12 C0.67 12 0.34 12 0 12 C0 8.04 0 4.08 0 0 Z " transform="translate(10,20)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(16,17)"></path>
+</symbol>
+
+<symbol id="connector_opened_middle_rtl" viewBox="0 0 22 32">
+<path d="M0 0 C3.3 0 6.6 0 10 0 C10 0.66 10 1.32 10 2 C6.7 2 3.4 2 0 2 C0 1.34 0 0.68 0 0 Z " fill="currentColor" transform="translate(7,17)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 5.28 1 10.56 1 16 C0.67 16 0.34 16 0 16 C0 10.72 0 5.44 0 0 Z " transform="translate(11,0)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 3.96 1 7.92 1 12 C0.67 12 0.34 12 0 12 C0 8.04 0 4.08 0 0 Z " transform="translate(11,20)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(0,17)"></path>
+</symbol>
+
+<symbol id="connector_opened_middle_selected" viewBox="0 0 22 32">
+<path d="M0 0 C3.3 0 6.6 0 10 0 C10 0.66 10 1.32 10 2 C6.7 2 3.4 2 0 2 C0 1.34 0 0.68 0 0 Z " fill="currentColor" transform="translate(5,17)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 5.28 1 10.56 1 16 C0.67 16 0.34 16 0 16 C0 10.72 0 5.44 0 0 Z " transform="translate(10,0)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 3.96 1 7.92 1 12 C0.67 12 0.34 12 0 12 C0 8.04 0 4.08 0 0 Z " transform="translate(10,20)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(16,17)"></path>
+</symbol>
+
+<symbol id="connector_opened_single" viewBox="0 0 22 32">
+<path d="M0 0 C3.3 0 6.6 0 10 0 C10 0.66 10 1.32 10 2 C6.7 2 3.4 2 0 2 C0 1.34 0 0.68 0 0 Z " fill="currentColor" transform="translate(5,16)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(16,17)"></path>
+</symbol>
+
+<symbol id="connector_opened_single_rtl" viewBox="0 0 22 32">
+<path d="M0 0 C3.3 0 6.6 0 10 0 C10 0.66 10 1.32 10 2 C6.7 2 3.4 2 0 2 C0 1.34 0 0.68 0 0 Z " fill="currentColor" transform="translate(7,16)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(0,17)"></path>
+</symbol>
+
+<symbol id="connector_opened_start" viewBox="0 0 22 32">
+<path d="M0 0 C3.3 0 6.6 0 10 0 C10 0.66 10 1.32 10 2 C6.7 2 3.4 2 0 2 C0 1.34 0 0.68 0 0 Z " fill="currentColor" transform="translate(5,16)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 4.29 1 8.58 1 13 C0.67 13 0.34 13 0 13 C0 8.71 0 4.42 0 0 Z " transform="translate(10,19)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(16,17)"></path>
+</symbol>
+
+<symbol id="connector_single" viewBox="0 0 22 22">
+<path d="M0 0 C2.375 0.8125 2.375 0.8125 3.375 2.8125 C5.69656597 3.21979228 8.0318787 3.55688677 10.375 3.8125 C10.375 4.1425 10.375 4.4725 10.375 4.8125 C9.281875 4.915625 8.18875 5.01875 7.0625 5.125 C3.44053649 5.44063565 3.44053649 5.44063565 1.75 7.4375 C1.29625 7.89125 0.8425 8.345 0.375 8.8125 C-2.3125 8.5 -2.3125 8.5 -4.625 7.8125 C-5.3125 5.5 -5.3125 5.5 -5.625 2.8125 C-3.97357397 0.06012328 -3.21627913 -0.22973422 0 0 Z " fill="#DBDBDB" transform="translate(11.625,8.1875)"></path>
+</symbol>
+
+<symbol id="connector_single_rtl" viewBox="0 0 22 22">
+<path d="M0 0 C2.6875 0.3125 2.6875 0.3125 5 1 C5.6875 3.3125 5.6875 3.3125 6 6 C4.875 7.875 4.875 7.875 3 9 C0.375 8.8125 0.375 8.8125 -2 8 C-2.33 7.34 -2.66 6.68 -3 6 C-5.32156597 5.59270772 -7.6568787 5.25561323 -10 5 C-10 4.67 -10 4.34 -10 4 C-8.906875 3.896875 -7.81375 3.79375 -6.6875 3.6875 C-3.06553649 3.37186435 -3.06553649 3.37186435 -1.375 1.375 C-0.92125 0.92125 -0.4675 0.4675 0 0 Z " fill="#DBDBDB" transform="translate(10,8)"></path>
+</symbol>
+
+<symbol id="connector_opened_start_rtl" viewBox="0 0 22 32">
+<path d="M0 0 C3.3 0 6.6 0 10 0 C10 0.66 10 1.32 10 2 C6.7 2 3.4 2 0 2 C0 1.34 0 0.68 0 0 Z " fill="currentColor" transform="translate(7,16)"></path>
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 4.29 1 8.58 1 13 C0.67 13 0.34 13 0 13 C0 8.71 0 4.42 0 0 Z " transform="translate(11,19)"></path>
+<path d="M0 0 C1.98 0 3.96 0 6 0 C6 0.33 6 0.66 6 1 C4.02 1 2.04 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(0,17)"></path>
+</symbol>
+
+<symbol id="connector_start" viewBox="0 0 22 22">
+<path d="M0 0 C3.96 0 7.92 0 12 0 C12 0.33 12 0.66 12 1 C8.37 1 4.74 1 1 1 C1 3.97 1 6.94 1 10 C0.67 10 0.34 10 0 10 C0 6.7 0 3.4 0 0 Z " transform="translate(10,12)"></path>
+</symbol>
+
+<symbol id="connector_start_selected" viewBox="0 0 22 22">
+<path d="M0 0 C3.96 0 7.92 0 12 0 C12 0.33 12 0.66 12 1 C8.37 1 4.74 1 1 1 C1 3.97 1 6.94 1 10 C0.67 10 0.34 10 0 10 C0 6.7 0 3.4 0 0 Z " transform="translate(10,12)"></path>
+</symbol>
+
+<symbol id="connector_start_rtl" viewBox="0 0 22 22">
+<path d="M0 0 C3.96 0 7.92 0 12 0 C12 3.3 12 6.6 12 10 C11.67 10 11.34 10 11 10 C11 7.03 11 4.06 11 1 C7.37 1 3.74 1 0 1 C0 0.67 0 0.34 0 0 Z " transform="translate(0,12)"></path>
+</symbol>
+
+<symbol id="connector_ancestor" viewBox="0 0 22 32">
+  
+  <path d="m 10,0 c 0.33,0 0.66,0 1,0 0,10.556074 0,21.112148 0,31.988102 -0.33,0 -0.66,0 -1,0 C 10,21.432028 10,10.875954 10,0 Z" id="connector_path1" style="stroke-width:1.20582"></path>
+</symbol>
+
+<symbol id="connector_ancestor_rtl" viewBox="0 0 22 22">
+<path d="M0 0 C0.33 0 0.66 0 1 0 C1 7.26 1 14.52 1 22 C0.67 22 0.34 22 0 22 C0 14.74 0 7.48 0 0 Z " transform="translate(11,0)"></path>
+</symbol>
+
+</svg>

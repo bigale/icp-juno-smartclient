@@ -1,0 +1,10 @@
+import { Layout } from './Layout';
+
+export class FilterBuilder extends Layout {
+    static ISC_CLASS_NAME = 'FilterBuilder';
+    
+    static IS_CLASS = true;
+static PROPERTY_TYPES = {"operatorPickerWidth":["Integer","String"],"operatorPickerProperties":[{"className":"FormItem","isProperties":true},{"className":"SelectItem","isProperties":true}],"fieldDataSource":{"className":"DataSource"},"showLastRemoveButton":"Boolean","radioOptions":{"className":"OperatorId","isArray":true},"showHiddenFields":"Boolean","removeButtonProperties":{"className":"ImgButton","isProperties":true},"allowedFields":{"className":"String","isArray":true},"topOperatorOptions":{"className":"OperatorId","isArray":true},"showSubClauseButton":"Boolean","clauseStackProperties":{"className":"VStack","isProperties":true},"showAddButton":"Boolean","saveOnEnter":"boolean","validateOnChange":"Boolean","showSelectionCheckbox":"Boolean","allowEmpty":"Boolean","modeSwitcherProperties":{"className":"Label","isProperties":true},"dataSource":{"className":"DataSource"},"bracketProperties":{"className":"Canvas","isProperties":true},"criteria":{"className":"AdvancedCriteria"},"topOperatorItemWidth":["Number","String"],"subClauseButtonProperties":{"className":"IButton","isProperties":true},"addButtonProperties":{"className":"ImgButton","isProperties":true},"sortFields":"Boolean","radioOperatorFormProperties":{"className":"DynamicForm","isProperties":true},"fieldPickerProperties":{"className":"FormItem","isProperties":true},"radioOperatorLayoutProperties":{"className":"HLayout","isProperties":true},"showModeSwitcher":"boolean","showRemoveButton":"Boolean","retainValuesAcrossFields":"Boolean","iconSize":"Integer","topOperatorFormProperties":{"className":"DynamicForm","isProperties":true},"showFieldTitles":"Boolean","fieldPickerWidth":["Integer","String"],"topOperatorItemProperties":{"className":"SelectItem","isProperties":true},"valueItemWidth":["Integer","String"]};
+static CHILD_TYPE_MAPPING = {"DataSource":"dataSource"};
+
+}

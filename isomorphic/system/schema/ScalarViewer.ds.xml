@@ -1,0 +1,8 @@
+<DataSource ID="ScalarViewer" inheritsFrom="DynamicForm" Constructor="ScalarViewer">
+    <fields>
+        <field name="fieldName" />
+        <field name="title" />
+        <field name="valueItemProperties" type="FormItem" />
+        <field name="fetchRequestProperties" type="DSRequest" />
+    </fields>
+</DataSource>
