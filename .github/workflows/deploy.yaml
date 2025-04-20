@@ -2,9 +2,13 @@ name: Deploy
 
 on:
   push:
-    branches: [main]
+    branches: 
+      - deploy
+      - public-main
   pull_request:
-    branches: [main]
+    branches: 
+      - deploy
+      - public-main
   workflow_dispatch:
     inputs:
       environment:
@@ -23,7 +27,7 @@ jobs:
     env:
       SATELLITE_ID_DEVELOPMENT: ${{ secrets.SATELLITE_ID_DEVELOPMENT }}
       SATELLITE_ID_PRODUCTION: ${{ secrets.SATELLITE_ID_PRODUCTION }}
-      NODE_ENV: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && 'production' || 'development' }}
+      NODE_ENV: ${{ github.ref == 'refs/heads/deploy' && 'production' || 'development' }}
     
     steps:
       - uses: actions/checkout@v3
@@ -43,11 +47,11 @@ jobs:
       - name: Build application
         run: npm run build
         env:
-          NEXT_PUBLIC_SATELLITE_ID: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && secrets.SATELLITE_ID_PRODUCTION || secrets.SATELLITE_ID_DEVELOPMENT }}
+          NEXT_PUBLIC_SATELLITE_ID: ${{ github.ref == 'refs/heads/deploy' && secrets.SATELLITE_ID_PRODUCTION || secrets.SATELLITE_ID_DEVELOPMENT }}
           
       - name: Deploy to Internet Computer
         run: |
-          if [[ "${{ github.event_name }}" == "push" && "${{ github.ref }}" == "refs/heads/main" ]]; then
+          if [[ "${{ github.ref }}" == "refs/heads/deploy" ]]; then
             npx juno deploy --network ic
           else
             npx juno deploy --network local
