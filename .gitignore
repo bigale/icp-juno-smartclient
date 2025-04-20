@@ -19,10 +19,17 @@
 
 # production
 /build
+/dist
+.dfx/
+.mops/
 
 # misc
 .DS_Store
 *.pem
+.idea/
+.vscode/
+*.swp
+*.swo
 
 # debug
 npm-debug.log*
@@ -30,10 +37,8 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files
 .env*
-# Environment variables
-.env
 .env.local
 .env.*.local
 
@@ -43,3 +48,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# SmartClient specific
+/isomorphic/
+isomorphic/**/derived/
+**/derived/
+**/*.cache
+**/*.timestamp
+**/SC_*.stats
+.smartclient/

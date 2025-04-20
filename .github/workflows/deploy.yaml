@@ -28,15 +28,17 @@ jobs:
       SATELLITE_ID_DEVELOPMENT: ${{ secrets.SATELLITE_ID_DEVELOPMENT }}
       SATELLITE_ID_PRODUCTION: ${{ secrets.SATELLITE_ID_PRODUCTION }}
       NODE_ENV: ${{ github.ref == 'refs/heads/deploy' && 'production' || 'development' }}
+      JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}
     
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
           cache: 'npm'
+          registry-url: "https://registry.npmjs.org"
           
       - name: Install dependencies
         run: npm ci
@@ -50,9 +52,8 @@ jobs:
           NEXT_PUBLIC_SATELLITE_ID: ${{ github.ref == 'refs/heads/deploy' && secrets.SATELLITE_ID_PRODUCTION || secrets.SATELLITE_ID_DEVELOPMENT }}
           
       - name: Deploy to Internet Computer
-        run: |
-          if [[ "${{ github.ref }}" == "refs/heads/deploy" ]]; then
-            npx juno deploy --network ic
-          else
-            npx juno deploy --network local
-          fi
+        uses: junobuild/juno-action@main
+        with:
+          args: deploy ${{ github.ref == 'refs/heads/deploy' && '--network ic' || '--network local' }}
+        env:
+          JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}
