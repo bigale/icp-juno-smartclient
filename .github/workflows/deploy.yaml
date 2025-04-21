@@ -50,33 +50,55 @@ jobs:
         run: |
           echo "::group::NPM Installation"
           # Install all dependencies including dev dependencies
-          NODE_ENV=development npm install --include=dev 2>&1 | tee npm-install.log
-          echo "::endgroup::"
+          NODE_ENV=development npm install --include=dev
           
-          echo "::group::Dependency information"
-          echo "Installed packages:"
-          npm ls --all > npm-list.log 2>&1
+          # Verify installation immediately
+          if [ ! -d "node_modules/typescript" ]; then
+            echo "Missing typescript, installing explicitly..."
+            npm install typescript --save-dev
+          fi
+          if [ ! -d "node_modules/@types/react" ]; then
+            echo "Missing @types/react, installing explicitly..."
+            npm install @types/react --save-dev
+          fi
+          if [ ! -d "node_modules/@types/node" ]; then
+            echo "Missing @types/node, installing explicitly..."
+            npm install @types/node --save-dev
+          fi
           
-          echo "Node modules count:"
-          node -e "console.log('node_modules files:', require('fs').readdirSync('node_modules').length)" | tee -a npm-list.log
+          # Now verify all critical dependencies are installed
+          MISSING_DEPS=0
+          if [ ! -d "node_modules/typescript" ]; then
+            echo "::error::Missing typescript"
+            MISSING_DEPS=1
+          fi
+          if [ ! -d "node_modules/@types/react" ]; then
+            echo "::error::Missing @types/react"
+            MISSING_DEPS=1
+          fi
+          if [ ! -d "node_modules/@types/node" ]; then
+            echo "::error::Missing @types/node"
+            MISSING_DEPS=1
+          fi
           
-          echo "Critical dependencies:"
-          npm ls typescript @types/react @types/node --all 2>&1 | tee -a npm-list.log
-          
-          echo "Package locations:"
-          ls -la node_modules/typescript node_modules/@types/react node_modules/@types/node 2>&1 | tee -a npm-list.log
-          echo "::endgroup::"
-          
-          # More detailed dependency check
-          if [ ! -d "node_modules/typescript" ] || [ ! -d "node_modules/@types/react" ] || [ ! -d "node_modules/@types/node" ]; then
-            echo "::error::One or more critical TypeScript dependencies are missing:"
-            [ ! -d "node_modules/typescript" ] && echo "::error::Missing typescript"
-            [ ! -d "node_modules/@types/react" ] && echo "::error::Missing @types/react"
-            [ ! -d "node_modules/@types/node" ] && echo "::error::Missing @types/node"
+          if [ $MISSING_DEPS -eq 1 ]; then
+            echo "::error::Critical TypeScript dependencies are still missing after explicit installation"
             echo "status=failed" >> $GITHUB_OUTPUT
             exit 1
           fi
+          
+          echo "All critical dependencies verified"
           echo "status=success" >> $GITHUB_OUTPUT
+          
+          # Log installation results
+          echo "::group::Installation Results"
+          echo "Installed packages:"
+          npm ls --all > npm-list.log 2>&1
+          echo "Node modules count:"
+          ls node_modules | wc -l | tee -a npm-list.log
+          echo "Critical dependencies:"
+          npm ls typescript @types/react @types/node --depth=0 2>&1 | tee -a npm-list.log
+          echo "::endgroup::"
           
       - name: Upload npm logs
         if: always()
