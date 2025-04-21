@@ -56,13 +56,23 @@ jobs:
           echo "::group::Dependency information"
           echo "Installed packages:"
           npm ls --all > npm-list.log 2>&1
+          
+          echo "Node modules count:"
           node -e "console.log('node_modules files:', require('fs').readdirSync('node_modules').length)" | tee -a npm-list.log
-          npm ls typescript @types/react @types/node || true | tee -a npm-list.log
+          
+          echo "Critical dependencies:"
+          npm ls typescript @types/react @types/node --all 2>&1 | tee -a npm-list.log
+          
+          echo "Package locations:"
+          ls -la node_modules/typescript node_modules/@types/react node_modules/@types/node 2>&1 | tee -a npm-list.log
           echo "::endgroup::"
           
-          # Check if critical dependencies are installed
-          if ! npm ls typescript @types/react @types/node >/dev/null 2>&1; then
-            echo "::error::Critical TypeScript dependencies are missing"
+          # More detailed dependency check
+          if [ ! -d "node_modules/typescript" ] || [ ! -d "node_modules/@types/react" ] || [ ! -d "node_modules/@types/node" ]; then
+            echo "::error::One or more critical TypeScript dependencies are missing:"
+            [ ! -d "node_modules/typescript" ] && echo "::error::Missing typescript"
+            [ ! -d "node_modules/@types/react" ] && echo "::error::Missing @types/react"
+            [ ! -d "node_modules/@types/node" ] && echo "::error::Missing @types/node"
             echo "status=failed" >> $GITHUB_OUTPUT
             exit 1
           fi
