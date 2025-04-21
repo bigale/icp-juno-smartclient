@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -58,7 +58,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
-    </html>
+      {children}
+    </>
   );
 }
