@@ -37,14 +37,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
-          registry-url: "https://registry.npmjs.org"
           
-      - name: Install dependencies
+      - name: Clean install
         run: |
-          npm ci
-          npm install --save-dev typescript@5.4.2 @types/react@18.2.67 @types/node@20.11.30
-        
+          rm -rf node_modules package-lock.json
+          npm install
+          
       - name: Build application
         run: npm run build
         env:
