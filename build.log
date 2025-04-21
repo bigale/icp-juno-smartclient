@@ -1,0 +1,41 @@
+
+> junosc@0.1.0 build
+> next build
+
+ ⚠ You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+   ▲ Next.js 15.3.1
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 5.0s
+   Linting and checking validity of types ...
+
+./app/layout.tsx
+41:9  Warning: Do not include stylesheets manually. See: https://nextjs.org/docs/messages/no-css-tags  @next/next/no-css-tags
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/4) ...
+Error: <Html> should not be imported outside of pages/_document.
+Read more: https://nextjs.org/docs/messages/no-document-import-in-page
+    at y (.next/server/chunks/548.js:6:1351)
+Error occurred prerendering page "/404". Read more: https://nextjs.org/docs/messages/prerender-error
+Error: <Html> should not be imported outside of pages/_document.
+Read more: https://nextjs.org/docs/messages/no-document-import-in-page
+    at K (/home/runner/work/icp-juno-smartclient/icp-juno-smartclient/node_modules/next/dist/compiled/next-server/pages.runtime.prod.js:16:6526)
+    at y (/home/runner/work/icp-juno-smartclient/icp-juno-smartclient/.next/server/chunks/548.js:6:1351)
+    at renderWithHooks (/home/runner/work/icp-juno-smartclient/icp-juno-smartclient/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5658:16)
+    at renderIndeterminateComponent (/home/runner/work/icp-juno-smartclient/icp-juno-smartclient/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5731:15)
+    at renderElement (/home/runner/work/icp-juno-smartclient/icp-juno-smartclient/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5946:7)
+    at renderNodeDestructiveImpl (/home/runner/work/icp-juno-smartclient/icp-juno-smartclient/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6104:11)
+    at renderNodeDestructive (/home/runner/work/icp-juno-smartclient/icp-juno-smartclient/node_modules/react-dom/cjs/react-dom-server.browser.development.js:6076:14)
+    at finishClassComponent (/home/runner/work/icp-juno-smartclient/icp-juno-smartclient/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5688:3)
+    at renderClassComponent (/home/runner/work/icp-juno-smartclient/icp-juno-smartclient/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5696:3)
+    at renderElement (/home/runner/work/icp-juno-smartclient/icp-juno-smartclient/node_modules/react-dom/cjs/react-dom-server.browser.development.js:5943:7)
+Export encountered an error on /_error: /404, exiting the build.
+ ⨯ Next.js build worker exited with code: 1 and signal: null
