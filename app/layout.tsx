@@ -10,36 +10,33 @@ export const metadata: Metadata = {
   },
 };
 
+const globalScript = `
+  if (typeof window !== 'undefined') {
+    window.isomorphicDir = "/isomorphic/";
+    window.isc = window.isc || {};
+    window.isc_useSimpleNames = false;
+    window.isc_useStandardSetTimeout = true;
+    window.isc_logIsDebugEnabled = true;
+    window.isc_logIsInfoEnabled = true;
+  }
+`;
+
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body>
-        <Script
-          id="smartclient-config"
-          dangerouslySetInnerHTML={{
-            __html: `
-              if (typeof window !== 'undefined') {
-                window.isomorphicDir = "/isomorphic/";
-                window.isc = window.isc || {};
-                window.isc_useSimpleNames = false;
-                window.isc_useStandardSetTimeout = true;
-                window.isc_logIsDebugEnabled = true;
-                window.isc_logIsInfoEnabled = true;
-              }
-            `
-          }}
-        />
-        <Script src="/isomorphic/system/modules/ISC_Core.js" />
-        <Script src="/isomorphic/system/modules/ISC_Foundation.js" />
-        <Script src="/isomorphic/system/modules/ISC_Containers.js" />
-        <Script src="/isomorphic/system/modules/ISC_Grids.js" />
-        <Script src="/isomorphic/system/modules/ISC_Forms.js" />
-        <Script src="/isomorphic/system/modules/ISC_DataBinding.js" />
-        <Script src="/isomorphic/skins/Shiva/load_skin.js" />
+        <Script id="smartclient-config" dangerouslySetInnerHTML={{ __html: globalScript }} strategy="beforeInteractive" />
+        <Script src="/isomorphic/system/modules/ISC_Core.js" strategy="beforeInteractive" />
+        <Script src="/isomorphic/system/modules/ISC_Foundation.js" strategy="beforeInteractive" />
+        <Script src="/isomorphic/system/modules/ISC_Containers.js" strategy="beforeInteractive" />
+        <Script src="/isomorphic/system/modules/ISC_Grids.js" strategy="beforeInteractive" />
+        <Script src="/isomorphic/system/modules/ISC_Forms.js" strategy="beforeInteractive" />
+        <Script src="/isomorphic/system/modules/ISC_DataBinding.js" strategy="beforeInteractive" />
+        <Script src="/isomorphic/skins/Shiva/load_skin.js" strategy="beforeInteractive" />
         <link rel="stylesheet" type="text/css" href="/isomorphic/skins/Shiva/skin_styles.css" />
         <style
           dangerouslySetInnerHTML={{
