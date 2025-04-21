@@ -49,8 +49,8 @@ jobs:
         id: install
         run: |
           echo "::group::NPM Installation"
-          # Install dependencies while preserving the lock file
-          npm install --no-audit --no-fund 2>&1 | tee npm-install.log
+          # Install all dependencies including dev dependencies
+          NODE_ENV=development npm install --include=dev 2>&1 | tee npm-install.log
           echo "::endgroup::"
           
           echo "::group::Dependency information"
