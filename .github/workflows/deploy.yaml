@@ -29,6 +29,8 @@ jobs:
       SATELLITE_ID_PRODUCTION: ${{ secrets.SATELLITE_ID_PRODUCTION }}
       NODE_ENV: ${{ github.ref == 'refs/heads/deploy' && 'production' || 'development' }}
       JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}
+      NPM_CONFIG_REGISTRY: "https://registry.npmjs.org/"
+      NPM_CONFIG_LEGACY_PEER_DEPS: "true"
     
     steps:
       - uses: actions/checkout@v4
@@ -37,11 +39,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+          registry-url: 'https://registry.npmjs.org/'
           
-      - name: Clean install
+      - name: Setup npm
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          npm config set legacy-peer-deps true
+          npm config list
+          
+      - name: Clean install dependencies
         run: |
           rm -rf node_modules package-lock.json
-          npm install
+          npm install --verbose --no-audit
+          # Install critical @dfinity dependencies explicitly
+          npm install @dfinity/auth-client @dfinity/utils @dfinity/identity --save
+          npm ls typescript @types/react @types/node || true
+          node -e "console.log('node_modules files:', require('fs').readdirSync('node_modules').length)"
           
       - name: Build application
         run: npm run build

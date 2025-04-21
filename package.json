@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@dfinity/agent": "^2.4.1",
+    "@dfinity/auth-client": "2.4.1",
     "@dfinity/candid": "^2.4.1",
+    "@dfinity/identity": "2.4.1",
     "@dfinity/principal": "^2.4.1",
+    "@dfinity/utils": "2.12.0",
     "@junobuild/config": "^0.1.6",
     "@junobuild/core": "^0.1.11",
     "buffer": "^6.0.3",
