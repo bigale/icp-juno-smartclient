@@ -49,7 +49,8 @@ jobs:
         id: install
         run: |
           echo "::group::NPM Installation"
-          npm ci 2>&1 | tee npm-install.log
+          # Force install all dependencies including devDependencies
+          npm ci --include=dev 2>&1 | tee npm-install.log
           echo "::endgroup::"
           
           echo "::group::Dependency information"
@@ -80,6 +81,9 @@ jobs:
         id: build
         if: steps.install.outputs.status != 'failed'
         run: |
+          # Ensure Next.js has access to all dependencies during build
+          export NODE_ENV=development
+          
           echo "::group::Next.js Build"
           npm run build 2>&1 | tee build.log
           BUILD_EXIT=${PIPESTATUS[0]}
