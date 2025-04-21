@@ -29,7 +29,10 @@ jobs:
       SATELLITE_ID_PRODUCTION: ${{ secrets.SATELLITE_ID_PRODUCTION }}
       NODE_ENV: ${{ github.ref == 'refs/heads/deploy' && 'production' || 'development' }}
       JUNO_TOKEN: ${{ secrets.JUNO_TOKEN }}
-    
+      
+    outputs:
+      build_status: ${{ steps.build.outputs.status }}
+      
     steps:
       - uses: actions/checkout@v4
       
@@ -43,17 +46,63 @@ jobs:
         run: npm cache clean --force
           
       - name: Install dependencies
+        id: install
         run: |
-          npm ci
-          node -e "console.log('node_modules files:', require('fs').readdirSync('node_modules').length)"
-          npm ls typescript @types/react @types/node || true
+          echo "::group::NPM Installation"
+          npm ci 2>&1 | tee npm-install.log
+          echo "::endgroup::"
+          
+          echo "::group::Dependency information"
+          echo "Installed packages:"
+          npm ls --all > npm-list.log 2>&1
+          node -e "console.log('node_modules files:', require('fs').readdirSync('node_modules').length)" | tee -a npm-list.log
+          npm ls typescript @types/react @types/node || true | tee -a npm-list.log
+          echo "::endgroup::"
+          
+          # Check if critical dependencies are installed
+          if ! npm ls typescript @types/react @types/node >/dev/null 2>&1; then
+            echo "::error::Critical TypeScript dependencies are missing"
+            echo "status=failed" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+          echo "status=success" >> $GITHUB_OUTPUT
+          
+      - name: Upload npm logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-logs
+          path: |
+            npm-install.log
+            npm-list.log
           
       - name: Build application
-        run: npm run build
+        id: build
+        if: steps.install.outputs.status != 'failed'
+        run: |
+          echo "::group::Next.js Build"
+          npm run build 2>&1 | tee build.log
+          BUILD_EXIT=${PIPESTATUS[0]}
+          echo "::endgroup::"
+          
+          if [ $BUILD_EXIT -eq 0 ]; then
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "status=failed" >> $GITHUB_OUTPUT
+            echo "::error::Build failed - check build.log artifact for details"
+          fi
         env:
           NEXT_PUBLIC_SATELLITE_ID: ${{ github.ref == 'refs/heads/deploy' && secrets.SATELLITE_ID_PRODUCTION || secrets.SATELLITE_ID_DEVELOPMENT }}
           
+      - name: Upload build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: build.log
+          
       - name: Deploy to Internet Computer
+        if: steps.build.outputs.status == 'success'
         uses: junobuild/juno-action@main
         with:
           args: deploy ${{ github.ref == 'refs/heads/deploy' && '--network ic' || '--network local' }}
