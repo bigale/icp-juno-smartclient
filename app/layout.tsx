@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,9 +16,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>
-      <head>
-        <script
+    <html lang="en">
+      <body>
+        <Script
+          id="smartclient-config"
           dangerouslySetInnerHTML={{
             __html: `
               if (typeof window !== 'undefined') {
@@ -31,13 +33,13 @@ export default function RootLayout({
             `
           }}
         />
-        <script src="/isomorphic/system/modules/ISC_Core.js" defer />
-        <script src="/isomorphic/system/modules/ISC_Foundation.js" defer />
-        <script src="/isomorphic/system/modules/ISC_Containers.js" defer />
-        <script src="/isomorphic/system/modules/ISC_Grids.js" defer />
-        <script src="/isomorphic/system/modules/ISC_Forms.js" defer />
-        <script src="/isomorphic/system/modules/ISC_DataBinding.js" defer />
-        <script src="/isomorphic/skins/Shiva/load_skin.js" defer />
+        <Script src="/isomorphic/system/modules/ISC_Core.js" />
+        <Script src="/isomorphic/system/modules/ISC_Foundation.js" />
+        <Script src="/isomorphic/system/modules/ISC_Containers.js" />
+        <Script src="/isomorphic/system/modules/ISC_Grids.js" />
+        <Script src="/isomorphic/system/modules/ISC_Forms.js" />
+        <Script src="/isomorphic/system/modules/ISC_DataBinding.js" />
+        <Script src="/isomorphic/skins/Shiva/load_skin.js" />
         <link rel="stylesheet" type="text/css" href="/isomorphic/skins/Shiva/skin_styles.css" />
         <style
           dangerouslySetInnerHTML={{
@@ -57,8 +59,8 @@ export default function RootLayout({
             `
           }}
         />
-      </head>
-      {children}
-    </>
+        {children}
+      </body>
+    </html>
   );
 }
