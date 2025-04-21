@@ -90,14 +90,14 @@ jobs:
           echo "All critical dependencies verified"
           echo "status=success" >> $GITHUB_OUTPUT
           
-          # Log installation results
+          # Log installation results (don't fail on logging errors)
           echo "::group::Installation Results"
           echo "Installed packages:"
-          npm ls --all > npm-list.log 2>&1
+          npm ls --all > npm-list.log 2>&1 || true
           echo "Node modules count:"
           ls node_modules | wc -l | tee -a npm-list.log
           echo "Critical dependencies:"
-          npm ls typescript @types/react @types/node --depth=0 2>&1 | tee -a npm-list.log
+          npm ls typescript @types/react @types/node --depth=0 2>&1 | tee -a npm-list.log || true
           echo "::endgroup::"
           
       - name: Upload npm logs
