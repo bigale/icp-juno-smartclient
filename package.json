@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare:dist": "rm -rf dist && mkdir -p dist && cp -r .next/static/* dist/ && cp -r public/* dist/"
   },
   "dependencies": {
     "@dfinity/agent": "^2.4.1",

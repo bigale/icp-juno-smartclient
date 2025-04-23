@@ -139,6 +139,9 @@ jobs:
           name: build-logs
           path: build.log
           
+      - name: Prepare dist folder for Juno deployment
+        run: npm run prepare:dist
+
       - name: Deploy to Internet Computer
         if: always()
         uses: junobuild/juno-action@main
