@@ -24,6 +24,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment: production_juno   # <-- Add this line
     
     env:
       SATELLITE_ID_DEVELOPMENT: ${{ secrets.SATELLITE_ID_DEVELOPMENT }}
