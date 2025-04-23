@@ -5,4 +5,4 @@
 - The project uses the Shiva skin, which is present in `public/isomorphic/skins/Shiva`.
 - The npm package `smartclient-lgpl` is not used for runtime assets; all runtime resources come from the public directory.
 - SmartClient global configuration and initialization is handled in a <script> block in the <head> of `app/layout.tsx`.
-- This setup is required to support the Shiva skin and full SmartClient features under LGPL.
+- This setup is required to support the Shiva skin and full SmartClient features under LGPL..
