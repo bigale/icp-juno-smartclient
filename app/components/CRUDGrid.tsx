@@ -21,6 +21,7 @@ declare global {
       ListGrid: any;
       DataSource: any;
       Auth: any;
+      Page: any;
       ask: (message: string, callback: (value: boolean) => void) => void;
       say: (message: string) => void;
       warn: (message: string) => void;
@@ -76,20 +77,24 @@ export default function CRUDGrid() {
       return;
     }
 
+    let mainLayout: any = null;
+    let taskGrid: any = null;
+    let toolbar: any = null;
+
     const init = async () => {
       try {
         // Load records
         const records = await junoService.getRecords();
 
         // Create the layout container first
-        const mainLayout = window.isc.VLayout.create({
+        mainLayout = window.isc.VLayout.create({
           width: "100%",
           height: "100%",
           members: []
         });
 
         // Create toolbar with buttons
-        const toolbar = window.isc.HLayout.create({
+        toolbar = window.isc.HLayout.create({
           height: 40,
           padding: 5,
           layoutMargin: 5,
@@ -119,7 +124,7 @@ export default function CRUDGrid() {
         });
 
         // Create the grid
-        const taskGrid = window.isc.ListGrid.create({
+        taskGrid = window.isc.ListGrid.create({
           ID: "taskGrid",
           width: "100%",
           height: "*",
@@ -196,13 +201,22 @@ export default function CRUDGrid() {
       }
     };
 
-    init();
+    // Wait for SmartClient to be fully ready
+    const readyCallback = () => { init(); };
+
+    if (window.isc.Page && window.isc.Page.isLoaded()) {
+      readyCallback();
+    } else if (window.isc.Page) {
+      window.isc.Page.setEvent("load", readyCallback);
+    }
 
     // Cleanup function
     return () => {
-      const grid = window.isc.DataSource.get("taskGrid");
-      if (grid) {
-        grid.destroy();
+      if (taskGrid) taskGrid.destroy();
+      if (toolbar) toolbar.destroy();
+      if (mainLayout) mainLayout.destroy();
+      if (window.isc && window.isc.Page && window.isc.Page.clearEvent) {
+        window.isc.Page.clearEvent("load", readyCallback);
       }
     };
   }, [isAuthenticated]);

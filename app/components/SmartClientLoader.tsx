@@ -1,7 +1,9 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function SmartClientLoader() {
+export default function SmartClientLoader({ children }: { children: React.ReactNode }) {
+  const [ready, setReady] = useState(false);
+
   useEffect(() => {
     // Helper to load a script
     function loadScript(src: string) {
@@ -24,12 +26,18 @@ export default function SmartClientLoader() {
       document.head.appendChild(link);
     }
 
-    // Set global config
+    // Set global config (use 'as any' only for the assignment)
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).isomorphicDir = "/isomorphic/";
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).isc = (window as any).isc || {};
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).isc_useSimpleNames = false;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).isc_useStandardSetTimeout = true;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).isc_logIsDebugEnabled = true;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window as any).isc_logIsInfoEnabled = true;
 
     // Load styles first
@@ -44,8 +52,13 @@ export default function SmartClientLoader() {
       await loadScript('/isomorphic/system/modules/ISC_Forms.js');
       await loadScript('/isomorphic/system/modules/ISC_DataBinding.js');
       await loadScript('/isomorphic/skins/Shiva/load_skin.js');
+      setReady(true);
     })();
   }, []);
 
-  return null;
+  if (!ready) {
+    return <div style={{textAlign: 'center', marginTop: '20vh'}}>Loading SmartClient UI…</div>;
+  }
+
+  return <>{children}</>;
 }
