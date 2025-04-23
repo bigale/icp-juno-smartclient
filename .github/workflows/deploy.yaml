@@ -139,7 +139,7 @@ jobs:
           path: build.log
           
       - name: Deploy to Internet Computer
-        if: steps.build.outputs.status == 'success'
+        if: always()
         uses: junobuild/juno-action@main
         with:
           args: deploy ${{ github.ref == 'refs/heads/deploy' && '--network ic' || '--network local' }}
