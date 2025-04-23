@@ -76,20 +76,24 @@ export default function CRUDGrid() {
       return;
     }
 
+    let mainLayout: any = null;
+    let taskGrid: any = null;
+    let toolbar: any = null;
+
     const init = async () => {
       try {
         // Load records
         const records = await junoService.getRecords();
 
         // Create the layout container first
-        const mainLayout = window.isc.VLayout.create({
+        mainLayout = window.isc.VLayout.create({
           width: "100%",
           height: "100%",
           members: []
         });
 
         // Create toolbar with buttons
-        const toolbar = window.isc.HLayout.create({
+        toolbar = window.isc.HLayout.create({
           height: 40,
           padding: 5,
           layoutMargin: 5,
@@ -105,7 +109,6 @@ export default function CRUDGrid() {
                   description: "Enter description",
                   status: "Pending"
                 };
-                
                 taskGrid.addData(newRecord);
                 junoService.addRecord(newRecord);
               }
@@ -119,7 +122,7 @@ export default function CRUDGrid() {
         });
 
         // Create the grid
-        const taskGrid = window.isc.ListGrid.create({
+        taskGrid = window.isc.ListGrid.create({
           ID: "taskGrid",
           width: "100%",
           height: "*",
@@ -161,10 +164,8 @@ export default function CRUDGrid() {
 
                       // Wait for all deletes to complete
                       await Promise.all(deletePromises);
-                      
                       // Remove records from grid only after successful deletion
                       self.removeSelectedData();
-
                       // Show success message
                       window.isc.say("Selected records were deleted successfully");
                     } catch (err) {
@@ -189,6 +190,12 @@ export default function CRUDGrid() {
         // Add components to the layout
         mainLayout.addMembers([toolbar, taskGrid]);
 
+        // Attach the SmartClient layout to the React container
+        if (containerRef.current) {
+          mainLayout.setContainer(containerRef.current);
+          mainLayout.draw();
+        }
+
         // Set initial data
         taskGrid.setData(records);
       } catch (err) {
@@ -200,10 +207,10 @@ export default function CRUDGrid() {
 
     // Cleanup function
     return () => {
-      const grid = window.isc.DataSource.get("taskGrid");
-      if (grid) {
-        grid.destroy();
-      }
+      // Destroy all created SmartClient widgets
+      if (taskGrid) taskGrid.destroy();
+      if (toolbar) toolbar.destroy();
+      if (mainLayout) mainLayout.destroy();
     };
   }, [isAuthenticated]);
 
@@ -259,5 +266,5 @@ export default function CRUDGrid() {
     );
   }
 
-  return <div ref={containerRef} style={{ width: '100%', height: '100vh' }} />;
+  return <div ref={containerRef} style={{ width: '100%', height: '100vh' }} data-cy="crud-grid-container" />;
 }
